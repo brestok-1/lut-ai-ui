@@ -336,6 +336,27 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.original-image-section {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.original-image-section h3 {
+  color: #f3f4f6;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.original-image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
 .result-actions {
   display: flex;
   gap: 1rem;

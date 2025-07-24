@@ -73,6 +73,10 @@ class LUTTransformer {
 
         <div class="result-section" id="result-section">
           <img class="result-image" id="result-image" alt="LUT Transformation Result" />
+          <div class="original-image-section">
+            <h3>Original Sample Image</h3>
+                         <img class="original-image" id="original-image" src="/sample.jpg" alt="Original Sample Image" />
+          </div>
           <div class="result-actions">
             <a class="btn btn-success" id="download-btn" download="transformed_preview.png">
               <span>💾</span>
