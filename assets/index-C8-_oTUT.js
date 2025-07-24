@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();class r{constructor(){this.selectedFile=null,this.resultImage=null,this.uploadedFiles=[],this.showingUploadedFiles=!1,this.apiBaseUrl="https://brestok-lut-ai.hf.space",this.init()}init(){this.createUI(),this.bindEvents(),this.fetchUploadedFiles()}createUI(){document.querySelector("#app").innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();class r{constructor(){this.selectedFile=null,this.resultImage=null,this.uploadedFiles=[],this.showingUploadedFiles=!1,this.apiBaseUrl="http://localhost:8000",this.init()}init(){this.createUI(),this.bindEvents(),this.fetchUploadedFiles()}createUI(){document.querySelector("#app").innerHTML=`
       <div class="header">
         <h1>LUT AI Transformer</h1>
         <p>Transform your color grading with AI-powered prompts</p>
@@ -56,7 +56,7 @@
           <img class="result-image" id="result-image" alt="LUT Transformation Result" />
           <div class="original-image-section">
             <h3>Original Sample Image</h3>
-                         <img class="original-image" id="original-image" src="/sample.jpg" alt="Original Sample Image" />
+                         <img class="original-image" id="original-image" src="/lut-ai-ui/sample.jpg" alt="Original Sample Image" />
           </div>
           <div class="result-actions">
             <a class="btn btn-success" id="download-btn" download="transformed_preview.png">
