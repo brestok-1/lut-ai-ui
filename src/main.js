@@ -6,6 +6,7 @@ class LUTTransformer {
     this.resultImage = null;
     this.uploadedFiles = [];
     this.showingUploadedFiles = false;
+    this.apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
     this.init();
   }
 
@@ -123,7 +124,7 @@ class LUTTransformer {
 
   async fetchUploadedFiles() {
     try {
-      const response = await fetch('http://localhost:8000/cube-files');
+      const response = await fetch(`${this.apiBaseUrl}/cube-files`);
       if (response.ok) {
         this.uploadedFiles = await response.json();
         this.displayUploadedFiles();
@@ -258,7 +259,7 @@ class LUTTransformer {
     const formData = new FormData();
     formData.append('file', this.selectedFile);
 
-    const response = await fetch('http://localhost:8000/upload-cube', {
+    const response = await fetch(`${this.apiBaseUrl}/upload-cube`, {
       method: 'POST',
       body: formData
     });
@@ -296,7 +297,7 @@ class LUTTransformer {
         this.fetchUploadedFiles();
       }
 
-      const response = await fetch('http://localhost:8000/transform-lut', {
+      const response = await fetch(`${this.apiBaseUrl}/transform-lut`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
